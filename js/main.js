@@ -37,7 +37,7 @@ document.querySelectorAll("[data-link]").forEach((a) => {
 const stage = document.getElementById("stage");
 const viewport = document.getElementById("viewport");
 const DESIGN_W = 1920;
-const DESIGN_H = 1200;
+const DESIGN_H = 1190;
 
 function isMobile() {
   return document.documentElement.clientWidth < 768;
