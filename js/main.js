@@ -17,8 +17,8 @@ const LINKS = {
   cekmece:  "",   // ÇEKMECE kategorisi
   solo:     "",   // SOLO kategorisi
 
-  siparis:  "",   // "Sipariş Ver" yazısı
-  iletisim: "",   // "İletişime Geçin" butonu
+  siparis:  "https://thepackt.co/pages/lansman",   // "Sipariş Ver" yazısı
+  iletisim: "https://thepackt.co/pages/iletisim",   // "İletişime Geçin" butonu
 };
 
 document.querySelectorAll("[data-link]").forEach((a) => {
