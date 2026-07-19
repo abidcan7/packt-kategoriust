@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+<!-- iframe icinde linkler ana pencereyi yonlendirsin -->
+<base target="_top">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PACKT</title>
@@ -32,7 +34,7 @@
   <div class="txt fs34 bold c-gray rv rv-up" style="left:1094.55px; top:132.35px;">02</div>
   <div class="txt fs17 bold c-gray rv rv-up d1" style="left:1221.55px; top:110.56px; line-height:20.72px;">Bağlantılı<br>Sağlam<br>Dengeli</div>
 
-  <!-- ===================== BEJ BANT =1==================== -->
+  <!-- ===================== BEJ BANT ===================== -->
   <div class="beige"></div>
 
   <!-- Liste satırları -->
@@ -114,7 +116,7 @@
   </a>
 
   <!-- ===================== ORDER YOURS ===================== -->
-  <a class="cta-btn order-btn rv rv-up" data-link="siparis" href="#" target="_top">Sipariş Ver</a>
+  <a class="cta-btn order-btn rv rv-up" data-link="siparis" href="https://thepackt.co/pages/lansman" target="_top">Sipariş Ver</a>
 
 
 </div>
@@ -213,7 +215,7 @@
         <img class="m-cat-img" src="img/cat-indie.png" alt="SOLO ürünü">
       </a>
 
-      <a class="m-order rv rv-up" data-link="siparis" href="#" target="_top">Sipariş Ver</a>
+      <a class="m-order rv rv-up" data-link="siparis" href="https://thepackt.co/pages/lansman" target="_top">Sipariş Ver</a>
     </div>
 
   </section>
@@ -221,5 +223,17 @@
 
 </div>
 <script src="js/main.js"></script>
-</body>
+
+<script>
+/* iframe fix: sayfa ici #linkler base target="_top" ile bozulmasin */
+document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    var h = a.getAttribute('href');
+    if (h.length < 2) { e.preventDefault(); return; }
+    var t = null;
+    try { t = document.querySelector(h); } catch (err) {}
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'auto', block: 'start' }); }
+  });
+});
+</script></body>
 </html>
